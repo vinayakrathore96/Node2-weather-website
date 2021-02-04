@@ -10,7 +10,7 @@ const forecast = (address,callback) => {
         else if(response.body.error)
         callback('Unable to fetch location',undefined)
         else
-        callback(undefined,response.body.current.condition.text)
+        callback(undefined,{"weather": response.body.current.condition.text, "temp": response.body.current.temp_c})
     })
     }
 
